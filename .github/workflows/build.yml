@@ -39,19 +39,13 @@ jobs:
           # 14.1 is for vs2017, 14.2 is vs2019, following the upstream vcpkg build from Qv2ray-deps repo
           toolset: 14.2
           arch: ${{ matrix.arch }}          
-      - name: Cache Qt
-        id: cache-qt
-        uses: actions/cache@v1
-        with:
-          path: ../Qt
-          key: QtCache-${{ matrix.platform }}-${{ matrix.arch }}-${{ matrix.qt_version }}
       - name: Installing Qt - ${{ matrix.arch }}
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           version: ${{ matrix.qt_version }}
           arch: ${{ matrix.qtarch }}
           extra: "-b http://mirrors.ocf.berkeley.edu/qt/"
-          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          cache: true
       - name: Install Python 3.8 version
         if: matrix.platform == 'windows-latest'
         uses: actions/setup-python@v1
