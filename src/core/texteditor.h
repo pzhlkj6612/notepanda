@@ -13,7 +13,6 @@
 #define TEXTEDITOR_H
 
 #include <KSyntaxHighlighting/Repository>
-
 #include <QPlainTextEdit>
 
 #include "configmanager.h"
