@@ -122,7 +122,7 @@ jobs:
             --appdir AppDir \
             --plugin checkrt \
             --output Notepanda.AppImage \
-            --icon-file ../images/notepanda.png \
+            --icon-file ../images/panda.ico \
             --desktop-file AppDir/usr/share/applications/notepanda.desktop
       - name: Linux - ${{ matrix.qt_version }} - Uploading artifact
         if: matrix.platform == 'ubuntu-20.04'
