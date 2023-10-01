@@ -12,7 +12,7 @@
 #ifndef TEXTEDITOR_H
 #define TEXTEDITOR_H
 
-#include <repository.h>
+#include <Repository>
 
 #include <QPlainTextEdit>
 

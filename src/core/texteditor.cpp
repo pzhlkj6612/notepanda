@@ -31,10 +31,10 @@
 #include <QTextStream>
 
 // KSyntaxHighlighting
-#include <definition.h>
-#include <foldingregion.h>
-#include <syntaxhighlighter.h>
-#include <theme.h>
+#include <Definition>
+#include <FoldingRegion>
+#include <SyntaxHighlighter>
+#include <Theme>
 
 #include "../ui/linenumberarea.h"
 
