@@ -52,11 +52,11 @@ jobs:
           arch: ${{ matrix.qtarch }}
           extra: "-b http://mirrors.ocf.berkeley.edu/qt/"
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
-      - name: Install Python 3.7 version
+      - name: Install Python 3.8 version
         if: matrix.platform == 'windows-latest'
         uses: actions/setup-python@v1
         with:
-          python-version: "3.7"
+          python-version: "3.8"
           architecture: ${{ matrix.arch }}
       - name: Get the version
         id: get_version
