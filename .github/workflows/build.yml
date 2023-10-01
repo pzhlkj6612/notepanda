@@ -121,9 +121,11 @@ jobs:
           ./linuxdeploy-x86_64.AppImage \
             --appdir AppDir \
             --plugin checkrt \
-            --output Notepanda.AppImage \
+            --output appimage \
             --icon-file ../images/panda.ico \
             --desktop-file AppDir/usr/share/applications/notepanda.desktop
+
+          mv ./Notepanda*.AppImage ./Notepanda.AppImage
       - name: Linux - ${{ matrix.qt_version }} - Uploading artifact
         if: matrix.platform == 'ubuntu-20.04'
         uses: actions/upload-artifact@master
