@@ -12,7 +12,7 @@
 #ifndef TEXTEDITOR_H
 #define TEXTEDITOR_H
 
-#include <Repository>
+#include <KSyntaxHighlighting/Repository>
 
 #include <QPlainTextEdit>
 
