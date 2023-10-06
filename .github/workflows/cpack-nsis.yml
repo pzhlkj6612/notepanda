@@ -29,7 +29,7 @@ jobs:
       - name: Get the version
         id: get_version
         shell: bash
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+        run: echo "VERSION=$(echo $GITHUB_REF | cut -d / -f 3)" >> "$GITHUB_OUTPUT"
       - name: Checking out sources
         uses: actions/checkout@v4
         with:
@@ -102,7 +102,7 @@ jobs:
         shell: bash
         id: get_package
         run: |
-          echo ::set-output name=NAME::$(basename build/Notepanda-*.exe)
+          echo "NAME=$(basename build/Notepanda-*.exe)" >> "$GITHUB_OUTPUT"
       - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - uploading artifact
         uses: actions/upload-artifact@master
         with:
