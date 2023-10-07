@@ -115,7 +115,7 @@ jobs:
           wget -c "https://github.com/darealshinji/linuxdeploy-plugin-checkrt/releases/download/continuous/linuxdeploy-plugin-checkrt.sh"
           wget -c "https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage"
           wget -c "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage"
-          chmod a+x linuxdeploy-x86_64.AppImage linuxdeploy-plugin-checkrt.sh
+          chmod a+x linuxdeploy-x86_64.AppImage linuxdeploy-plugin-checkrt.sh linuxdeploy-plugin-qt-x86_64.AppImage
 
           # add GCC's libraries to the search path
           # and call through linuxdeploy using the `--plugin checkrt` option
