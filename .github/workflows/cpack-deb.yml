@@ -16,8 +16,16 @@ jobs:
       - name: Get commit message
         id: get_message
         run: |
-          echo "message=$(git log --format=%B -n 1 ${{ github.event.after }})" >> "$GITHUB_OUTPUT"
-          echo "message=$(git log --format=%B -n 1 ${{ github.event.after }})" >> $GITHUB_ENV
+          {
+            echo 'message<<EOF'
+            $(git log --format=%B -n 1 ${{ github.event.after }})
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+          {
+            echo 'message<<EOF'
+            $(git log --format=%B -n 1 ${{ github.event.after }})
+            echo EOF
+          } >> "$GITHUB_ENV"
   linux:
     strategy:
         matrix:
