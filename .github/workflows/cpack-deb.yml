@@ -18,12 +18,12 @@ jobs:
         run: |
           {
             echo 'message<<EOF'
-            $(git log --format=%B -n 1 ${{ github.event.after }})
+            git log --format=%B -n 1 ${{ github.event.after }}
             echo EOF
           } >> "$GITHUB_OUTPUT"
           {
             echo 'message<<EOF'
-            $(git log --format=%B -n 1 ${{ github.event.after }})
+            git log --format=%B -n 1 ${{ github.event.after }}
             echo EOF
           } >> "$GITHUB_ENV"
   linux:
