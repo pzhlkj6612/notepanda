@@ -16,7 +16,7 @@
 
 If you want to track the latest news of Notepanda, welcome to our [📰 Telegram channel](https://t.me/notepanda)!
 
-BTW you can read this post in my blog: [Notepanda 开发小结](https://chungzh.cn/2020/05/16/notepanda/)
+BTW you can read this post in my blog: [Notepanda 开发小结](https://blog.chungzh.cn/articles/notepanda/)
 
 ## Why write this text editor?
 
@@ -115,4 +115,4 @@ Copyright (c) ChungZH.
 
 🗒️ Notepanda © ChungZH.
 
-> [Blog](https://chungzh.cn) · [Portfolio](https://chungzh.cc) · [GitHub](https://github.com/ChungZH)
+> [Blog](https://blog.chungzh.cn/) · [Portfolio](https://chungzh.cn/) · [GitHub](https://github.com/ChungZH)
