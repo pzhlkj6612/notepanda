@@ -36,7 +36,7 @@ jobs:
         with:
           submodules: 'recursive'
       - name: Install Python 3.8 version
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.8'
           architecture: ${{ matrix.arch }}
@@ -60,7 +60,7 @@ jobs:
 #         choco install -y ninja
       - name: Setup Ninja
         if: matrix.platform == 'windows-latest'
-        uses: ashutoshvarma/setup-ninja@master
+        uses: ashutoshvarma/setup-ninja@66ad2db9ed7d211c065daeeb849e9c8c895773c9
         with:
           # ninja version to download. Default: 1.10.0
           version: 1.10.0          
@@ -105,12 +105,12 @@ jobs:
         run: |
           echo "NAME=$(basename build/Notepanda-*.exe)" >> "$GITHUB_OUTPUT"
       - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - uploading artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.get_package.outputs.NAME }}
           path: build/${{ steps.get_package.outputs.NAME }}
       - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - Upload binaries to release
-        uses: svenstaro/upload-release-action@v1-release
+        uses: svenstaro/upload-release-action@v2
         if: github.event_name == 'release'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
