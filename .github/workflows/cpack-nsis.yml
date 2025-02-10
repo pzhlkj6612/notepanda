@@ -11,14 +11,14 @@ jobs:
     strategy:
       matrix:
         qt_version: [5.14.2]
-        platform: [windows-latest]
+        platform: [windows-2019]
         arch: [x86, x64]
         include: 
-          - platform: windows-latest
+          - platform: windows-2019
             arch: x86
             qtarch: win32_msvc2017
             cmakearch: Win32
-          - platform: windows-latest
+          - platform: windows-2019
             arch: x64
             qtarch: win64_msvc2017_64
             cmakearch: x64
@@ -55,17 +55,17 @@ jobs:
           cache: true
 # Windows----------------------------------------------------------------------
 #      - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - Build preparation - Download Dependencies
-#        if: matrix.platform == 'windows-latest'
+#        if: matrix.platform == 'windows-2019'
 #        run: |
 #         choco install -y ninja
       - name: Setup Ninja
-        if: matrix.platform == 'windows-latest'
+        if: matrix.platform == 'windows-2019'
         uses: ashutoshvarma/setup-ninja@66ad2db9ed7d211c065daeeb849e9c8c895773c9
         with:
           # ninja version to download. Default: 1.10.0
           version: 1.10.0          
       - name: Win - Build ecm
-        if: matrix.platform == 'windows-latest'
+        if: matrix.platform == 'windows-2019'
         env:
           CC: cl.exe
           CXX: cl.exe
@@ -78,7 +78,7 @@ jobs:
           cmake --build .
           cmake --build . --target install
       - name: Win - Build syntax highlight
-        if: matrix.platform == 'windows-latest'
+        if: matrix.platform == 'windows-2019'
         env:
           CC: cl.exe
           CXX: cl.exe
@@ -90,7 +90,7 @@ jobs:
           cmake --build .
           cmake --build . --target install
       - name: Windows - ${{ matrix.qt_version }} - Generate Dependencies and Build
-        if: matrix.platform == 'windows-latest'
+        if: matrix.platform == 'windows-2019'
         env:
           CC: cl.exe
           CXX: cl.exe

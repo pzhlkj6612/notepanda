@@ -11,7 +11,7 @@ jobs:
     outputs:
       commit_message: ${{ steps.get_message.outputs.message }}
     name: Check if the workflow has been disabled.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - name: Get commit message
@@ -34,7 +34,7 @@ jobs:
     needs: check_commit_msg
     if: ${{ !contains( needs.check_commit_msg.outputs.commit_message, 'NO_DEB') }}
     name: Debian ${{ matrix.distro }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container: debian:${{ matrix.distro }}
 
     steps:
