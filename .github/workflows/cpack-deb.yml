@@ -13,7 +13,7 @@ jobs:
     name: Check if the workflow has been disabled.
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Get commit message
         id: get_message
         run: |
@@ -43,7 +43,7 @@ jobs:
           apt-get update
           apt-get install -y git
       - name: Checking out sources
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: 'recursive'
       - name: Install build dependencies
