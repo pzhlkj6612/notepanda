@@ -100,7 +100,7 @@ jobs:
         run: |
           echo "NAME=$(basename build/Notepanda-*.exe)" >> "$GITHUB_OUTPUT"
       - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - uploading artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: ${{ steps.get_package.outputs.NAME }}
           path: build/${{ steps.get_package.outputs.NAME }}

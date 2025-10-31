@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         qt_version: [5.14.2]
-        platform: [ubuntu-22.04, macos-13, windows-2022]
+        platform: [ubuntu-22.04, macos-15-intel, windows-2022]
         arch: [x86, x64]
         include:
           - platform: windows-2022
@@ -23,7 +23,7 @@ jobs:
         exclude:
           - platform: ubuntu-22.04
             arch: x86
-          - platform: macos-13
+          - platform: macos-15-intel
             arch: x86
       fail-fast: false
     runs-on: ${{ matrix.platform }}
@@ -129,7 +129,7 @@ jobs:
           mv ./Notepanda*.AppImage ./Notepanda.AppImage
       - name: Linux - ${{ matrix.qt_version }} - Uploading artifact
         if: startsWith(matrix.platform, 'ubuntu')
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Notepanda-${{ github.sha }}.Linux-${{ matrix.arch }}.qt${{ matrix.qt_version }}.AppImage
           path: build/Notepanda.AppImage
@@ -199,7 +199,7 @@ jobs:
           pathTarget: ./release.7z
       - name: Win - ${{ matrix.arch }} - ${{ matrix.qt_version }} - Uploading artifact
         if: startsWith(matrix.platform, 'windows')
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Notepanda-${{ github.sha }}.Windows-${{ matrix.arch }}.qt${{ matrix.qt_version }}.7z
           path: release.7z
@@ -244,7 +244,7 @@ jobs:
           macdeployqt notepanda.app -dmg
       - name: macOS - ${{ matrix.qt_version }} - Uploading Artifact
         if: startsWith(matrix.platform, 'macos')
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Notepanda-${{ github.sha }}.macOS-${{ matrix.arch }}.qt${{ matrix.qt_version }}.dmg
           path: build/notepanda.dmg

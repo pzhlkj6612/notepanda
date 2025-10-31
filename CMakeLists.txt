@@ -1,6 +1,6 @@
 # CMakeLists.txt
 
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.5.0)
 
 file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSION" VERSION)
 file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/BUILDVERSION" BUILD_VERSION)
