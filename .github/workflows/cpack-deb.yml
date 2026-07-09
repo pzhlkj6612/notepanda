@@ -13,7 +13,7 @@ jobs:
     name: Check if the workflow has been disabled.
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Get commit message
         id: get_message
         run: |
@@ -43,7 +43,7 @@ jobs:
           apt-get update
           apt-get install -y git
       - name: Checking out sources
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           submodules: 'recursive'
       - name: Install build dependencies
@@ -65,7 +65,7 @@ jobs:
         shell: bash
         run: echo "VERSION=$(echo $GITHUB_REF | cut -d / -f 3)" >> "$GITHUB_OUTPUT"
       - name: Upload artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.get_package.outputs.NAME }}
           path: build/${{ steps.get_package.outputs.NAME }}
