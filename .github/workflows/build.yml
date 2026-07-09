@@ -60,16 +60,16 @@ jobs:
         if: startsWith(matrix.platform, 'ubuntu')
         shell: bash
         env:
-          CC: /usr/bin/gcc-9
-          CXX: /usr/bin/g++-9
+          CC: /usr/bin/gcc
+          CXX: /usr/bin/g++
         run: |
           sudo apt install libgl-dev libx11-dev libxkbcommon-x11-dev ninja-build
       - name: Linux - Build ecm
         if: startsWith(matrix.platform, 'ubuntu')
         shell: bash
         env:
-          CC: /usr/bin/gcc-9
-          CXX: /usr/bin/g++-9
+          CC: /usr/bin/gcc
+          CXX: /usr/bin/g++
         run: |
           cd src/3rdparty/extra-cmake-modules
           mkdir build
@@ -81,8 +81,8 @@ jobs:
         if: startsWith(matrix.platform, 'ubuntu')
         shell: bash
         env:
-          CC: /usr/bin/gcc-9
-          CXX: /usr/bin/g++-9
+          CC: /usr/bin/gcc
+          CXX: /usr/bin/g++
         run: |
           cd src/3rdparty/syntax-highlighting
           mkdir build
@@ -94,8 +94,8 @@ jobs:
         if: startsWith(matrix.platform, 'ubuntu')
         shell: bash
         env:
-          CC: /usr/bin/gcc-9
-          CXX: /usr/bin/g++-9
+          CC: /usr/bin/gcc
+          CXX: /usr/bin/g++
         run: |
           mkdir build
           cd build
@@ -106,8 +106,8 @@ jobs:
         if: startsWith(matrix.platform, 'ubuntu')
         shell: bash
         env:
-          CC: /usr/bin/gcc-9
-          CXX: /usr/bin/g++-9
+          CC: /usr/bin/gcc
+          CXX: /usr/bin/g++
         run: |
           cd build
           # get linuxdeploy and linuxdeploy-plugin-checkrt and make them executable
