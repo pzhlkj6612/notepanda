@@ -170,7 +170,7 @@ if(UNIX)
         set(CPACK_DEBIAN_PACKAGE_NAME "Notepanda")
         set(CPACK_PACKAGE_CONTACT "chungzh07@gmail.com")
         set(CPACK_DEBIAN_PACKAGE_MAINTAINER "ChungZH")
-        set(CPACK_DEBIAN_PACKAGE_DEPENDS "qtbase5-dev, qttools5-dev, libkf5syntaxhighlighting-dev")
+        set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt5core5a | libqt5core5t64, libqt5widgets5 | libqt5widgets5t64, libkf5syntaxhighlighting5")
     endif()
 
     #if(BUILD_RPM)
